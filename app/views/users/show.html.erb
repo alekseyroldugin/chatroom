@@ -12,7 +12,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @user.avatar %>
+  <%= image_tag(@user.avatar_url, :width => 50) if @user.avatar.present? %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
