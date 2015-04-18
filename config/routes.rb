@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, except: [ :new, :create ]
+
+  # Пути для ссылок в application.html.erb
+  devise_scope :user do
+    get "sign_in", :to => "devise/sessions#new", :as => :sign_in
+    get "sign_out", :to => "devise/sessions#destroy", :as => :sign_out
+    get "sign_up", :to => "devise/registrations#new", :as => :sign_up
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

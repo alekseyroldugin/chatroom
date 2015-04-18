@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// Строки ниже из рекомендаций по установке с github
+//= require jquery
+//= require bootstrap-sprockets
+
